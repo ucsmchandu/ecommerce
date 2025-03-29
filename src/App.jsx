@@ -7,6 +7,7 @@ import Orders from './pages/Orders'
 import Contact from './pages/Contact'
 import Shop from './pages/Shop'
 import MainLayout from './mainlayout/MainLayout'
+
 const App = () => {
   return (
     <Router>

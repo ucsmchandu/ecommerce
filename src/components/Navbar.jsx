@@ -6,9 +6,12 @@ import open from '../assets/menu.png'
 import profile from '../assets/user.png'
 import search from '../assets/search.gif'
 import cartlogo from '../assets/cart-icon.gif'
+import search2 from '../assets/search2.png'
 const Navbar = () => {
   const [isOpen,setIsOpen]=useState(false);
   const [hidden,setHidden]=useState(false);
+  const [showSearch,setShowSearch]=useState(false);
+
   useEffect(()=>{
     let previousScrollY=window.scrollY;
     const handleScroll=()=>{
@@ -35,7 +38,7 @@ const Navbar = () => {
     }}
     animate={hidden ? "hidden" : "visible"}
     transition={{duration :0.5,ease:"easeInOut"}}
-    className='flex justify-between items-center p-4  text-black bg-[#FBFBFB] shadow-lg fixed top-0 left-0 w-full z-50'>
+    className='flex justify-between font-mono items-center p-4  text-black bg-[#FBFBFB] shadow-lg fixed top-0 left-0 w-full z-50'>
       <div className=' '>
         Logo
       </div>
@@ -70,14 +73,15 @@ const Navbar = () => {
           <motion.button 
           whileHover={{scale:1.1}}
           className=''
-          ><Link to="" className=' cursor-pointer'><li className='p-1  rounded-lg'><img src={search} className='h-6 relative top-3' /></li></Link></motion.button>
+          onClick={()=>setShowSearch(true)}
+          ><Link to="" className=' cursor-pointer'><li className='p-1  rounded-lg'><span title="search"><img src={search} className='h-6 relative top-3' /></span></li></Link></motion.button>
           <motion.button 
           whileHover={{scale:1.1}}
-          ><Link to="" className=' cursor-pointer'><li className='p-1 '><img src={profile} className='h-6 relative top-3' /></li></Link></motion.button>
+          ><Link to="" className=' cursor-pointer'><li className='p-1 '><span title="profile"><img src={profile} className='h-6 relative top-3' /></span></li></Link></motion.button>
           <motion.button 
           whileHover={{scale:1.1}}
           className=''
-          ><Link to="" className=' cursor-pointer'><li className='p-1  rounded-lg'><img src={cartlogo} className='h-7 relative top-3 ' /></li></Link></motion.button>
+          ><Link to="" className=' cursor-pointer'><li className='p-1  rounded-lg'><span title="cart"><img src={cartlogo} className='h-7 relative top-3 ' /></span></li></Link></motion.button>
 
         </ul>
       </div>
@@ -116,6 +120,29 @@ const Navbar = () => {
         />
       )
     }
+
+   {
+    showSearch && (
+      <div className='fixed top-0 left-0 backdrop-blur-sm w-full h-full flex justify-center items-center'>
+      <div className=' rounded-lg w-md shadow-lg  bg-gray-300 h-40 z-50'>
+        <div className='flex float-end  w-fit p-2 '><button onClick={()=>setShowSearch(false)} className='cursor-pointer relative right-2 top-2'><img src={close} className='h-4' /></button></div>
+        <div className='flex justify-center items-center h-full'>
+          <input type="text" name='search' className='outline-none p-2 w-80 rounded-md bg-white placeholder:text-lg' placeholder='search item' />
+          <label htmlFor="search" className=' cursor-pointer'><img src={search2} className='h-8 rounded-lg bg-gray-400  m-1 p-1 ' /></label>
+        </div>
+      </div>
+      {
+      showSearch && (
+        <div 
+        className='fixed inset-0 backdrop-blur-sm '
+        onClick={()=> setShowSearch(false)}
+        />
+      )
+    }
+    </div>
+    )
+    
+  }
    </>
   )
 }
