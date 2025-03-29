@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {motion} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import { Link } from 'react-router-dom'
 import close from '../assets/close.png'
 import open from '../assets/menu.png'
@@ -38,7 +38,7 @@ const Navbar = () => {
     }}
     animate={hidden ? "hidden" : "visible"}
     transition={{duration :0.5,ease:"easeInOut"}}
-    className='flex justify-between font-mono items-center p-4  text-black bg-[#FBFBFB] shadow-lg fixed top-0 left-0 w-full z-50'>
+    className='flex justify-between font-mono items-center p-4 text-lg text-black bg-[#FBFBFB] shadow-lg fixed top-0 left-0 w-full z-50'>
       <div className=' '>
         Logo
       </div>
@@ -85,7 +85,8 @@ const Navbar = () => {
 
         </ul>
       </div>
-      <div className='flex md:hidden'>
+      <div className='flex md:hidden space-x-4'>
+        <button className='cursor-pointer' onClick={()=>setShowSearch(true)}><img src={search} className='h-7'/></button>
        <button className='cursor-pointer  p-1  rounded-lg' onClick={()=>setIsOpen(!isOpen)}>
         {
           isOpen ? (
@@ -95,6 +96,7 @@ const Navbar = () => {
           )
         }
        </button>
+
       </div>
 
     </motion.nav>
@@ -109,7 +111,6 @@ const Navbar = () => {
           <Link to="/contact" onClick={()=>isOpen(false)} className='p-1 bg-[#3A6EAA] hover:bg-[#87CEEB] rounded'><li className='p-1  block text-lg'>Contact us</li></Link>
           <Link to="/about" onClick={()=>isOpen(false)} className='p-1 bg-[#3A6EAA] hover:bg-[#87CEEB] rounded'><li className='p-1  block text-lg'>About us</li></Link>
           <Link to="/about" onClick={()=>isOpen(false)} className='p-1 bg-[#3A6EAA] hover:bg-[#87CEEB] rounded'><li className='p-1  block text-lg'>Account</li></Link>
-
       </ul>
     </div>
     {
@@ -120,29 +121,39 @@ const Navbar = () => {
         />
       )
     }
-
+    <AnimatePresence>
+      
    {
     showSearch && (
-      <div className='fixed top-0 left-0 backdrop-blur-sm w-full h-full flex justify-center items-center'>
+      <motion.div
+      initial={{opacity:0,y:-20}}
+      animate={{opacity:1,y:0}}
+      exit={{opacity:0,y:-20}}
+      transition={{duration:0.3}}
+      className='fixed top-0 left-0 backdrop-blur-sm w-full h-full flex justify-center items-center'>
       <div className=' rounded-lg w-md shadow-lg  bg-gray-300 h-40 z-50'>
         <div className='flex float-end  w-fit p-2 '><button onClick={()=>setShowSearch(false)} className='cursor-pointer relative right-2 top-2'><img src={close} className='h-4' /></button></div>
         <div className='flex justify-center items-center h-full'>
-          <input type="text" name='search' className='outline-none p-2 w-80 rounded-md bg-white placeholder:text-lg' placeholder='search item' />
+          <input type="text" id='search' name='search' className='outline-none p-2 w-80 rounded-md bg-white placeholder:text-lg' placeholder='search item' />
           <label htmlFor="search" className=' cursor-pointer'><img src={search2} className='h-8 rounded-lg bg-gray-400  m-1 p-1 ' /></label>
         </div>
       </div>
       {
       showSearch && (
-        <div 
+        <motion.div
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{opacity:0}}
+        transition={{duration:0.2}}
         className='fixed inset-0 backdrop-blur-sm '
         onClick={()=> setShowSearch(false)}
         />
       )
     }
-    </div>
+    </motion.div>
     )
-    
   }
+    </AnimatePresence>
    </>
   )
 }
