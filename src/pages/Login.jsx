@@ -1,6 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 const Login = () => {
+ const [data,setData]=useState({username:'',password:''});
+ const handleData=(e)=>{
+  setData({...data,[e.target.name]:e.target.value.trim()});
+ }
+ const handleSubmit=(e)=>{
+  e.preventDefault();
+  if(!data.username || !data.password){
+    alert("Enter valid data");
+    return;
+  }
+  console.log(data);
+  setData({
+    username:'',
+    password:''
+  })
+ }
   return (
     <>
      <div className='w-screen h-screen flex justify-center items-center '>
@@ -8,18 +24,18 @@ const Login = () => {
           <div className='relative -left-20 p-1 -top-6'>
             <p><span className='text-2xl font-semibold'>Sign in</span><br/>or <span className='text-blue-600 cursor-pointer hover:underline'><Link to="/register">create account</Link></span></p>
           </div>
-          <form action="">
+          <form onSubmit={handleSubmit}>
           <div className='flex flex-col space-y-3'>
             <label htmlFor="usernameOrEmail">Username or Email <span className='text-red-600'>*</span></label>
-            <input id="usernameOrEmail" type="text" placeholder='Username or Email' required className='border outline-none w-72 p-2 placeholder:text-md'/>
+            <input id="usernameOrEmail" type="text" name='username' value={data.username} placeholder='Username or Email' onChange={handleData} className='border outline-none w-72 p-2 placeholder:text-md'/>
             <label htmlFor="password">Password <span className='text-red-600'>*</span></label>
-            <input id="password" type="password" placeholder='Password' required className='border outline-none w-72 p-2 placeholder:text-md'/>
+            <input id="password" type="password" name='password' value={data.password} placeholder='Password' onChange={handleData} className='border outline-none w-72 p-2 placeholder:text-md'/>
           </div>
 
           <div className='space-y-6 pt-4   '><input type="checkbox" id="remember" /> <label htmlFor="remember" className='pl-1'>Remember me</label></div>
           
           <div className=''>
-            <button type='submit' className=' w-72 p-1 text-lg bg-blue-600 text-white cursor-pointer hover:bg-blue-700'>Sign in</button>
+            <button type='submit' name='submit' className=' w-72 p-1 text-lg bg-blue-600 text-white cursor-pointer hover:bg-blue-700'>Sign in</button>
           </div>
           </form>
           <div className='pt-4'>
@@ -29,9 +45,7 @@ const Login = () => {
             </button>
           </div>
         </div>
-        
      </div>
-    
     </>
   )
 }
