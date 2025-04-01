@@ -9,6 +9,7 @@ import Shop from './pages/Shop'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import MainLayout from './mainlayout/MainLayout'
+import Products from './pages/Products'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="contact" element={<Contact/>} />
         <Route path="login" element={<Login/>}/>
         <Route path="register" element={<Register/>} />
+        <Route path="products" element={<Products/>}/>
         </Route>
       </Routes>
     </Router>
