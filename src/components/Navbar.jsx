@@ -169,7 +169,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 backdrop-blur-sm w-full h-full flex justify-center items-center"
+            className="fixed top-0 left-0 z-50 backdrop-blur-sm w-full h-full flex justify-center items-center"
           >
             <div className=" rounded-lg w-md shadow-lg  bg-gray-300 h-40 z-50">
               <div className="flex float-end  w-fit p-2 ">
