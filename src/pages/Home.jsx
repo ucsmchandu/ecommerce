@@ -3,9 +3,7 @@ import ProductDetails from './Product-details'
 const Home = () => {
   return (
     <div className='pt-20'>
-      {/* hello */}
-      <ProductDetails/>
-     
+      hello
     </div>
   )
 }

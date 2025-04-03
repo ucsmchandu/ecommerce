@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-
+import { Link } from 'react-router-dom';
 const ProductCard = ({name,rating,price}) => {
     const [wishlist,setWishlist]=useState(false);
   return (
         <div className='w-72  flex flex-col items-center p-2 bg-gray-100 rounded-lg shadow-md '>
-
         <div className='p-2'>
-         <img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743525839/chicken-bone-pickle-1-scaled_qjq4h3.webp" className='h-52 rounded-2xl' />
+            {/*takes to seperate page with the name */}
+            <Link to={`/product/${name}`}>
+            <img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743525839/chicken-bone-pickle-1-scaled_qjq4h3.webp" className='h-52 rounded-2xl' />
+            </Link>
         </div>
 
         <div className="flex flex-col items-center space-y-2 pt-3">
