@@ -100,7 +100,7 @@ const Navbar = () => {
           <motion.button 
           whileHover={{scale:1.1}}
           className=''
-          ><Link to="" className=' cursor-pointer'><li className='p-1  rounded-lg'><span title="cart"><img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402531/cart-icon_n63xlq.gif" className='h-7 relative top-3 ' /></span></li></Link></motion.button>
+          ><Link to="/cart" className=' cursor-pointer'><li className='p-1  rounded-lg'><span title="cart"><img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402531/cart-icon_n63xlq.gif" className='h-7 relative top-3 ' /></span></li></Link></motion.button>
           </ul>
 
         </div>
@@ -119,6 +119,12 @@ const Navbar = () => {
             onClick={() => setShowSearch(true)}
           >
             <img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402566/search_dvvaet.gif" className="h-7" />
+          </motion.button>
+          <motion.button
+        whileHover={{scale:1.1}}
+            className="cursor-pointer"
+          >
+           <Link to="/cart"> <img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402531/cart-icon_n63xlq.gif" className="h-7" /></Link>
           </motion.button>
           <button
             className="cursor-pointer  p-1  rounded-lg"
