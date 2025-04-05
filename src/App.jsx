@@ -1,5 +1,6 @@
-import React from 'react'
-import { BrowserRouter as Router,Routes,Route,Link,useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
+import CartContext from './components/Cart-context'
 import Home from './pages/Home'
 import About from './pages/About'
 import Cart from './pages/Cart'
@@ -12,7 +13,9 @@ import Products from './pages/Products'
 import ProductDetails from './pages/Product-details'
 
 const App = () => {
+  const [cart,setCart]=useState([]);
   return (
+    <CartContext.Provider value={{cart,setCart}}>
     <Router>
       <Routes>
         <Route path="/*" element={<MainLayout/>}>
@@ -29,6 +32,7 @@ const App = () => {
         </Route>
       </Routes>
     </Router>
+    </CartContext.Provider>
   )
 }
 

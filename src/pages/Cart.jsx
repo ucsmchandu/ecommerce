@@ -1,6 +1,8 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import CartContext from '../components/Cart-context';
 const Cart = () => {
+  const {cart}=useContext(CartContext);
+  console.log(cart);
   return (
     <div className="pt-20">
       
@@ -23,20 +25,20 @@ const Cart = () => {
           <div className="space-y-2">
             <h2 className="text-xl font-semibold">Product Name</h2>
             <p className="text-gray-600">Price: ₹500</p>
-            <p className="text-gray-600">Quantity: 2</p>
+            <p className="text-gray-600">
+              <label htmlFor="quantity">Quantity: </label>
+              <input id='quantity' type="number" min="1" max="300" className='border outline-none'/>
+            </p>
             <p className="text-gray-600">Total: ₹1000</p>
           </div>
             {/* this is for  buttons*/}
           <div className="flex flex-col space-y-2">
-            <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-              Update Quantity
-            </button>
             <button className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
               Remove Item
             </button>
           </div>
         </div>
-        {/* this is for checkout button */}
+        {/* this is for checkout button */}  
         <div className="flex justify-end mt-6">
           <div className="space-y-2">
             <h3 className="text-xl font-semibold">Cart Total: ₹1000</h3>
@@ -47,6 +49,7 @@ const Cart = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 

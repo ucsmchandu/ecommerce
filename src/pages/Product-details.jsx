@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import CartContext from '../components/Cart-context'
 import ProductsListings from "../components/Products-listings";
 import { useParams } from "react-router-dom";
 import products from '../Products-data.json';
 const ProductDetails = () => {
+  // initializing the cart array object by using the contextApi
+  const {cart,setCart}=useContext(CartContext);
+  //here is the function to add the items into cart
+  const addToCart=(item)=>{
+    setCart([...cart,item]);
+  };
   // taking the url value using params
   const {name}=useParams();
   //checking
@@ -52,7 +59,10 @@ const ProductDetails = () => {
           </div>
           <div>
             {/* add to cart button */}
-            <button className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
+            <button
+            // here comes the onclick option to add the product into the cart
+            onClick={()=>addToCart(product)}
+            className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
               Add to cart
             </button>
           </div>
@@ -76,7 +86,7 @@ const ProductDetails = () => {
       <div className="flex justify-center">
         <p className="text-lg font-semibold">Related Products</p>
       </div>
-      <div className="-mt-15">
+      <div className="mt-10">
         <ProductsListings/>
       </div>
     </div>
