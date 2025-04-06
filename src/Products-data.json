@@ -3,60 +3,70 @@
     "id": 1,
     "name": "Wireless Mouse",
     "rating": 4.5,
-    "price": 15.99
+    "price": 15.99,
+    "quantity": 1
   },
   {
     "id": 2,
     "name": "Mechanical Keyboard",
     "rating": 4.7,
-    "price": 49.99
+    "price": 49.99,
+    "quantity": 1
   },
   {
     "id": 3,
     "name": "Gaming Headset",
     "rating": 4.3,
-    "price": 35.50
+    "price": 35.50,
+    "quantity": 1
   },
   {
     "id": 4,
     "name": "Smartphone Stand",
     "rating": 4.6,
-    "price": 10.99
+    "price": 10.99,
+    "quantity": 1
   },
   {
     "id": 5,
     "name": "USB-C Charger",
     "rating": 4.8,
-    "price": 18.75
+    "price": 18.75,
+    "quantity": 1
   },
   {
     "id": 6,
     "name": "Portable SSD",
     "rating": 4.9,
-    "price": 89.99
+    "price": 89.99,
+    "quantity": 1
   },
   {
     "id": 7,
     "name": "Laptop Cooling Pad",
     "rating": 4.2,
-    "price": 22.99
+    "price": 22.99,
+    "quantity": 1
   },
   {
     "id": 8,
     "name": "Bluetooth Speaker",
     "rating": 4.4,
-    "price": 29.99
+    "price": 29.99,
+    "quantity": 1
   },
   {
     "id": 9,
     "name": "Wireless Earbuds",
     "rating": 4.6,
-    "price": 39.50
+    "price": 39.50,
+    "quantity": 1
   },
   {
     "id": 10,
     "name": "LED Desk Lamp",
     "rating": 4.5,
-    "price": 25.00
+    "price": 25.00,
+    "quantity": 1
   }
 ]

@@ -4,6 +4,7 @@ import ProductsListings from "../components/Products-listings";
 import { useParams } from "react-router-dom";
 import products from '../Products-data.json';
 const ProductDetails = () => {
+  
   // initializing the cart array object by using the contextApi
   const {cart,setCart}=useContext(CartContext);
   //here is the function to add the items into cart
@@ -15,7 +16,7 @@ const ProductDetails = () => {
   //checking
   const product = products.find((p)=>p.name===name);
   if(!product){
-    return <h2 className="text-center text-red-500">Product Not Found</h2>;
+    return <h2 className=" text-red-500 mt-20 text-3xl flex justify-center items-center h-96">Product Not Found !</h2>;
   }
   return (
     <>
@@ -59,12 +60,22 @@ const ProductDetails = () => {
           </div>
           <div>
             {/* add to cart button */}
-            <button
-            // here comes the onclick option to add the product into the cart
-            onClick={()=>addToCart(product)}
+            {
+              !cart.find((p)=>p.name===name) ? (
+                <button
+            onClick={()=>{addToCart(product);
+              alert("Product added to cart!");
+            }}
             className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
               Add to cart
             </button>
+              ) : (
+                <button
+            className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-not-allowed">
+              Added to cart
+            </button>
+              )
+            }
           </div>
           <div>
             {/* add to wishlist */}
