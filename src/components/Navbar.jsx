@@ -35,6 +35,11 @@ const Navbar = () => {
       name: "About Us",
       link: "/about",
     },
+    {
+      id:6,
+      name:"Wishlist",
+      link:"/wishlist"
+    }
   ];
   //this is for scrolling effect of the navbar
   useEffect(() => {

@@ -2,19 +2,51 @@ import React, { useContext, useState } from "react";
 import CartContext from '../components/Cart-context'
 import ProductsListings from "../components/Products-listings";
 import { useParams } from "react-router-dom";
-import products from '../Products-data.json';
+import products from '../Products-data.json'
 const ProductDetails = () => {
   
   // initializing the cart array object by using the contextApi
   const {cart,setCart}=useContext(CartContext);
+  console.log(cart);
   //here is the function to add the items into cart
-  const addToCart=(item)=>{
-    setCart([...cart,item]);
+  const addToCart = (item) => {
+    console.log(item);
+  
+    // Validate the incoming item
+    if (!item || !item.id || !item.price) {
+      console.error("Invalid product data:", item);
+      return;
+    }
+  
+    // Filter out null or undefined items from the cart
+    const validCart = cart.filter((p) => p !== null && p !== undefined);
+  
+    // Check if the product already exists in the cart
+    const existingProduct = validCart.find((p) => p.id === item.id);
+  
+    if (existingProduct) {
+      setCart(
+        validCart.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        )
+      );
+    } else {
+      setCart([...validCart, { ...item, quantity: 1 }]);
+    }
   };
   // taking the url value using params
   const {name}=useParams();
   //checking
-  const product = products.find((p)=>p.name===name);
+  const product = products.find((p) => p.name === decodeURIComponent(name));
+if (!product) {
+  return (
+    <h2 className="text-red-500 mt-20 text-3xl flex justify-center items-center h-96">
+      Product Not Found!
+    </h2>
+  );
+}
   if(!product){
     return <h2 className=" text-red-500 mt-20 text-3xl flex justify-center items-center h-96">Product Not Found !</h2>;
   }
@@ -25,7 +57,7 @@ const ProductDetails = () => {
         <div className="w-full flex justify-center">
           <img
           // here we have to use the data base data
-            src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743525839/chicken-bone-pickle-1-scaled_qjq4h3.webp"
+            src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743401208/cld-sample-5.jpg"
             className="max-w-full rounded-lg shadow-md"
           />
         </div>
@@ -60,22 +92,13 @@ const ProductDetails = () => {
           </div>
           <div>
             {/* add to cart button */}
-            {
-              !cart.find((p)=>p.name===name) ? (
-                <button
+            <button
             onClick={()=>{addToCart(product);
               alert("Product added to cart!");
             }}
             className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
               Add to cart
             </button>
-              ) : (
-                <button
-            className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-not-allowed">
-              Added to cart
-            </button>
-              )
-            }
           </div>
           <div>
             {/* add to wishlist */}
