@@ -7,10 +7,8 @@ const ProductDetails = () => {
   
   // initializing the cart array object by using the contextApi
   const {cart,setCart}=useContext(CartContext);
-  console.log(cart);
-  //here is the function to add the items into cart
+    //here is the function to add the items into cart
   const addToCart = (item) => {
-    console.log(item);
   
     // Validate the incoming item
     if (!item || !item.id || !item.price) {

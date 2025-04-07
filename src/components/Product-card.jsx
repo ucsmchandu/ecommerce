@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
+import WishlistContext from './Wishlist-context';
 const ProductCard = ({id,name,rating,price,quantity}) => {
-    const [wishlist,setWishlist]=useState(false);
+    const {wishlist,setWishlist}=useContext(WishlistContext);
+    const validWishlist=wishlist.filter((p)=>p!==null && p!=undefined);
+    const findProductInWishlist=validWishlist.find((p)=>p.id===id);
+    
   return (
         <div className='w-72  flex flex-col items-center p-2 bg-gray-100 rounded-lg shadow-md '>
         <div className='p-2'>
@@ -15,15 +19,17 @@ const ProductCard = ({id,name,rating,price,quantity}) => {
             <p className='text-lg text-gray-500'>{name}</p>
             <p className='text-amber-500'>{rating}★★★★☆</p>
             <p className='text-lg'>{price}<span className="relative left-1">₹</span></p>
-            <button className='font-medium cursor-pointer' onClick={()=>setWishlist(true)}>
+            <button className='font-medium cursor-pointer'
+            >
                 {
-                    !wishlist ? <span className='text-blue-500 hover:text-blue-600'>Add to wishlist</span>:<span>Visit wishlist</span>
+                  !findProductInWishlist ?  <span className='text-blue-500 hover:text-blue-600'>Add to wishlist</span>:<span>Visit wishlist</span>
                 }
             </button>
         </div>
 
         </div>
   )
+//   !wishlist ?
 }
 
 export default ProductCard

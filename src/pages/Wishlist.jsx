@@ -1,20 +1,8 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import WishlistContext from '../components/Wishlist-context';
 const Wishlist = () => {
-  const wishlist = [
-    {
-      id: 1,
-      name: 'Spicy Garlic Pickle',
-      price: 299,
-      image: 'https://via.placeholder.com/150',
-    },
-    {
-      id: 2,
-      name: 'Sweet Mango Pickle',
-      price: 399,
-      image: 'https://via.placeholder.com/150',
-    },
-  ];
+ const {wishlist,setWishlist}=useContext(WishlistContext);
 
   return (
     <div className="mt-20 min-h-screen bg-gray-100">
@@ -27,7 +15,15 @@ const Wishlist = () => {
       <div className="container mx-auto p-6">
         {wishlist.length === 0 ? (
           <div className="text-center text-gray-500 mt-16">
-            <p className="text-2xl">Your wishlist is empty 😔</p>
+            <p className="text-2xl">Your wishlist is empty </p>
+            <div className='mt-6'>
+            <Link
+              to="/shop"
+              className="p-2 rounded-lg text-[#FFFF] bg-gray-600 hover:bg-gray-500"
+            >
+              Return to shop
+            </Link>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -37,7 +33,7 @@ const Wishlist = () => {
                 className="bg-white rounded-2xl shadow hover:shadow-lg transition-all duration-300 p-4 flex flex-col items-center"
               >
                 <img
-                  src={item.image}
+                  src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743401208/cld-sample-5.jpg"
                   alt={item.name}
                   className="w-40 h-40 object-cover rounded-xl"
                 />
