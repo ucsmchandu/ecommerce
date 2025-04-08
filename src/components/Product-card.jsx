@@ -16,6 +16,7 @@ const ProductCard = ({id,name,rating,price,quantity}) => {
      }
      if(!findProductInWishlist){
       setWishlist([...validWishlist,{...item,quantity:1}]);
+      alert("Product is added to wishlist")
      }
     };
     const filterProducts=products.filter((p)=>p!=null && p!=undefined);
@@ -34,7 +35,10 @@ const ProductCard = ({id,name,rating,price,quantity}) => {
             <p className='text-amber-500'>{rating}★★★★☆</p>
             <p className='text-lg'>{price}<span className="relative left-1">₹</span></p>
             <button className='font-medium cursor-pointer'
-            onClick={()=>addToWishlist(findProductInProducts)}
+            onClick={()=>{addToWishlist(findProductInProducts);
+            }
+              
+            }
             >
                 {
                   !findProductInWishlist ?  <span className='text-blue-500 hover:text-blue-600'>Add to wishlist</span>:<span><Link to="/wishlist">Visit wishlist</Link></span>
