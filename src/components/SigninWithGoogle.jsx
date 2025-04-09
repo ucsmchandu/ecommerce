@@ -1,16 +1,17 @@
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'//this is for singin through the google to get the google the popup
 import React from 'react'
-import { auth, db } from './firebase';
-import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from './firebase';//auth is used for signin,signout and currentUser,db is used to get the details that stored in firestore
+import { doc, setDoc } from 'firebase/firestore';//this is used for store the user data in firestore in docs
 
 const SigninWithGoogle = () => {
     function googleLogin(){
-        const provider=new GoogleAuthProvider();
-        signInWithPopup(auth,provider).then(async(result)=>{
-            console.log(result);
-            const user=result.user;
+        const provider=new GoogleAuthProvider();//this initializes the google authentication data
+        signInWithPopup(auth,provider).then(//popup is used for to get the google signin dash board
+            async(result)=>{ 
+            // console.log(result);
+            const user=result.user; //this gets the user data like uid,email,displayName,extra stuff
             if(result.user){
-                await setDoc(doc(db, 'Users', user.uid), {
+                await setDoc(doc(db, 'Users', user.uid), { //this part stores the data in firestore
                           email: user.email,
                           userName: user.displayName,
                         });

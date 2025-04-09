@@ -1,9 +1,9 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth'; //this is used for sign,that means this gets the data from the backend of the firebase
 import React, { useState } from 'react';
-import { auth } from '../components/firebase';
+import { auth } from '../components/firebase'; //this is used for signin,signout and currentUser to get the user data
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import SigninWithGoogle from '../components/SigninWithGoogle';
+import SigninWithGoogle from '../components/SigninWithGoogle'; //function to signin
 
 const Login = () => {
   const [data, setData] = useState({ email: '', password: '' });
@@ -16,17 +16,23 @@ const Login = () => {
     e.preventDefault();
 
     if (!data.email || !data.password) {
-      toast.warning('Enter valid details!');
+      toast.warning('Enter valid details!',{
+        position:'bottom-left',
+      });
       return;
     }
 
     try {
       //this function checks the user exists or not
       await signInWithEmailAndPassword(auth, data.email, data.password);
-      toast.success('Logged in successfully!');
+      toast.success('Logged in successfully!',{
+        position:'bottom-left',
+      });
     } catch (err) {
       console.log('Error from Login.jsx :', err.message);
-      toast.error('Invalid login credentials!');
+      toast.error('Invalid login credentials!',{
+        position:'bottom-left',
+      });
     }
 
     setData({

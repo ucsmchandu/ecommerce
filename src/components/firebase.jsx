@@ -17,6 +17,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth=getAuth();
-export const db=getFirestore(app);
+export const auth=getAuth();//this is for login,signin and currentUser to get the details
+export const db=getFirestore(app);//this is for to store the extra details fo the user like username and other stuff in firestore
 export default app;

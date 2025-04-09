@@ -1,9 +1,9 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';// this is  for creating the user using email and password
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { auth, db } from '../components/firebase';
-import { setDoc, doc } from 'firebase/firestore';
+import { toast } from 'react-toastify'; //thisi is for pop up message
+import { auth, db } from '../components/firebase';//auth is used for all purposes like login and logout and 'auth.currentUser' to get current user details
+import { setDoc, doc } from 'firebase/firestore';//this is storing the user extra details like user name and email and other stuff
 
 const Register = () => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -72,7 +72,9 @@ const Register = () => {
       }
     } catch (err) {
       console.log('Error from register.jsx :', err.message);
-      toast.error('Registration failed!', { position: 'bottom-left' });
+      toast.error('Registration failed!', {
+         position: 'bottom-left' 
+        });
     }
 
     setData({ username: '', email: '', password: '', confirmPassword: '' });
@@ -81,7 +83,7 @@ const Register = () => {
   return (
     <div className="w-full mt-20 flex items-center justify-center bg-gray-100 py-12 px-4">
       <div className="w-96 max-w-3xl border border-gray-300 shadow-lg rounded-xl p-10 bg-white">
-        <div className="text-center mb-6">
+        <div className=" mb-6">
           <h2 className="text-3xl font-bold">Register</h2>
           <p className="text-gray-600">
             or{' '}
