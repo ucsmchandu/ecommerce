@@ -2,6 +2,8 @@ import React, { useState,useEffect } from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import CartContext from './components/Cart-context'
 import WishlistContext from './components/Wishlist-context'
+import AuthContextProvider from './components/AuthContext'
+import ProtectedRoute from './components/ProtectedRoute'
 import Home from './pages/Home'
 import About from './pages/About'
 import Cart from './pages/Cart'
@@ -13,6 +15,9 @@ import MainLayout from './mainlayout/MainLayout'
 import Products from './pages/Products'
 import ProductDetails from './pages/Product-details'
 import Wishlist from './pages/Wishlist'
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Profile from './pages/profile'
 
 const App = () => {
   //this set of code is for cart
@@ -47,7 +52,8 @@ const App = () => {
     localStorage.setItem("wishlist",JSON.stringify(wishlist));
   },[wishlist]);
   return (
-    <CartContext.Provider value={{cart,setCart}}>
+   <AuthContextProvider>
+     <CartContext.Provider value={{cart,setCart}}>
      <WishlistContext.Provider value={{wishlist,setWishlist}}>
      <Router>
       <Routes>
@@ -56,18 +62,34 @@ const App = () => {
         <Route path="about" element={<About/>}/>
         <Route path="shop" element={<Products/>}/>
         <Route path="cart" element={<Cart/>} />
-        <Route path="orders" element={<Orders/>} />
+        <Route path="orders" element={
+          <ProtectedRoute>
+            <Orders/>
+          </ProtectedRoute>
+        } />
         <Route path="contact" element={<Contact/>} />
         <Route path="login" element={<Login/>}/>
         <Route path="register" element={<Register/>} />
         <Route path="products" element={<Products/>}/>
-        <Route path="wishlist" element={<Wishlist/>}/>
+        <Route path="wishlist" element={
+          <ProtectedRoute>
+            <Wishlist/>
+          </ProtectedRoute>
+        }/>
+        <Route path="profile" element={
+          <ProtectedRoute>
+            <Profile/>
+          </ProtectedRoute>
+        } />
         <Route path="product/:name" element={<ProductDetails/>}/>
         </Route>
       </Routes>
+      {/* this is for pop up messages */}
+      <ToastContainer/>
     </Router>
      </WishlistContext.Provider>
     </CartContext.Provider>
+   </AuthContextProvider>
   )
 }
 

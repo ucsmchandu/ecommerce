@@ -1,53 +1,107 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useState } from 'react';
+import { auth } from '../components/firebase';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import SigninWithGoogle from '../components/SigninWithGoogle';
+
 const Login = () => {
- const [data,setData]=useState({username:'',password:''});
- const handleData=(e)=>{
-  setData({...data,[e.target.name]:e.target.value.trim()});
- }
- const handleSubmit=(e)=>{
-  e.preventDefault();
-  if(!data.username || !data.password){
-    alert("Enter valid data");
-    return;
-  }
-  console.log(data);
-  setData({
-    username:'',
-    password:''
-  })
- }
+  const [data, setData] = useState({ email: '', password: '' });
+
+  const handleData = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value.trim() });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!data.email || !data.password) {
+      toast.warning('Enter valid details!');
+      return;
+    }
+
+    try {
+      //this function checks the user exists or not
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      toast.success('Logged in successfully!');
+    } catch (err) {
+      console.log('Error from Login.jsx :', err.message);
+      toast.error('Invalid login credentials!');
+    }
+
+    setData({
+      email: '',
+      password: '',
+    });
+  };
+
   return (
-    <>
-     <div className='w-screen h-screen flex justify-center items-center '>
-        <div className='border rounded flex flex-col justify-center items-center w-sm h-2/3'>
-          <div className='relative -left-20 p-1 -top-6'>
-            <p><span className='text-2xl font-semibold'>Sign in</span><br/>or <span className='text-blue-600 cursor-pointer hover:underline'><Link to="/register">create account</Link></span></p>
-          </div>
-          <form onSubmit={handleSubmit}>
-          <div className='flex flex-col space-y-3'>
-            <label htmlFor="usernameOrEmail">Username or Email <span className='text-red-600'>*</span></label>
-            <input id="usernameOrEmail" type="text" name='username' value={data.username} placeholder='Username or Email' onChange={handleData} className='border outline-none w-72 p-2 placeholder:text-md'/>
-            <label htmlFor="password">Password <span className='text-red-600'>*</span></label>
-            <input id="password" type="password" name='password' value={data.password} placeholder='Password' onChange={handleData} className='border outline-none w-72 p-2 placeholder:text-md'/>
-          </div>
-
-          <div className='space-y-6 pt-4   '><input type="checkbox" id="remember" /> <label htmlFor="remember" className='pl-1'>Remember me</label></div>
-          
-          <div className=''>
-            <button type='submit' name='submit' className=' w-72 p-1 text-lg bg-blue-600 text-white cursor-pointer hover:bg-blue-700'>Sign in</button>
-          </div>
-          </form>
-          <div className='pt-4'>
-          <button className="cursor-pointer hover:shadow-md  flex items-center justify-center w-72 gap-3 border p-1 rounded-sm">
-              <img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743403171/google_zgmnav.png" className="h-5 w-5" alt="Google Logo" />
-              <span>Sign in with Google</span>
-            </button>
-          </div>
+    <div className="w-full mt-20 flex justify-center items-center py-12 px-4 bg-gray-100">
+      <div className="w-96 max-w-3xl border border-gray-300 shadow-lg rounded-xl p-10 bg-white">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-bold">Sign in</h2>
+          <p className="text-gray-600">
+            or{' '}
+            <Link
+              to="/register"
+              className="text-blue-600 hover:underline font-medium"
+            >
+              create account
+            </Link>
+          </p>
         </div>
-     </div>
-    </>
-  )
-}
 
-export default Login
+        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
+          <div className="flex flex-col space-y-1">
+            <label htmlFor="email">
+              Email <span className="text-red-600">*</span>
+            </label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              value={data.email}
+              placeholder="Email"
+              onChange={handleData}
+              className="border outline-none w-72 p-2 placeholder:text-md"
+            />
+          </div>
+
+          <div className="flex flex-col space-y-1">
+            <label htmlFor="password">
+              Password <span className="text-red-600">*</span>
+            </label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              value={data.password}
+              placeholder="Password"
+              onChange={handleData}
+              className="border outline-none w-72 p-2 placeholder:text-md"
+            />
+          </div>
+
+          {/* <div className="w-72 text-left pt-2">
+            <input type="checkbox" id="remember" />
+            <label htmlFor="remember" className="pl-2">
+              Remember me
+            </label>
+          </div> */}
+
+          <button
+            type="submit"
+            className="w-72 py-2 text-lg bg-blue-600 text-white rounded-md mt-4 hover:bg-blue-700"
+          >
+            Sign in
+          </button>
+        </form>
+        <div className='flex justify-center items-center mt-3'><p>or</p></div>
+        <SigninWithGoogle/>
+        
+      </div>
+    </div>
+  );
+};
+
+export default Login;
