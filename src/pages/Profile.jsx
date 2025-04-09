@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../components/AuthContext'
 import { auth } from '../components/firebase';
-import { signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
-
 
 async function handleLogout(){
     try{
