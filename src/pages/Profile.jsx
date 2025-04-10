@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../components/AuthContext'
 import { auth } from '../components/firebase';
 import { toast } from 'react-toastify';
+import { Navigate } from 'react-router-dom';
 
 async function handleLogout(){
     try{
@@ -17,18 +18,19 @@ async function handleLogout(){
 const Profile = () => {
     const {currentUser,userData}=useContext(AuthContext);
     if(!currentUser){
-        return <p>You are not logged in</p>
+        return Navigate('/login');
     }
     else{
         console.log(currentUser);
         console.log(userData);
     }
+    const current=currentUser;
   return (
     <div className='mt-30'>
-        <h1>Welcome,{userData ?.userName}</h1>
-        <p>Email:{userData ?.email}</p>
-        <button onClick={handleLogout}>logout</button>
-    </div>
+    <h1>Welcome,{userData ?.userName}</h1>
+    <p>Email:{userData ?.email}</p>
+    <button onClick={handleLogout}>logout</button>
+</div>
   )
 }
 

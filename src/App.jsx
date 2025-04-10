@@ -2,8 +2,8 @@ import React, { useState,useEffect } from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import CartContext from './components/Cart-context'
 import WishlistContext from './components/Wishlist-context'
-import AuthContextProvider from './components/AuthContext'
-import ProtectedRoute from './components/ProtectedRoute'
+import AuthContextProvider from './components/AuthContext'//this provides the data globally
+import ProtectedRoute from './components/ProtectedRoute'//this checks the user signedin or singed out
 import Home from './pages/Home'
 import About from './pages/About'
 import Cart from './pages/Cart'
@@ -52,7 +52,8 @@ const App = () => {
     localStorage.setItem("wishlist",JSON.stringify(wishlist));
   },[wishlist]);
   return (
-   <AuthContextProvider>
+    //this spredads the data
+   <AuthContextProvider> 
      <CartContext.Provider value={{cart,setCart}}>
      <WishlistContext.Provider value={{wishlist,setWishlist}}>
      <Router>

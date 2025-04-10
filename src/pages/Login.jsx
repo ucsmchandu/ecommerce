@@ -1,13 +1,15 @@
 import { signInWithEmailAndPassword } from 'firebase/auth'; //this is used for sign,that means this gets the data from the backend of the firebase
 import React, { useState } from 'react';
 import { auth } from '../components/firebase'; //this is used for signin,signout and currentUser to get the user data
-import { Link } from 'react-router-dom';
+import { Link,useNavigate,useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import SigninWithGoogle from '../components/SigninWithGoogle'; //function to signin
 
 const Login = () => {
   const [data, setData] = useState({ email: '', password: '' });
-
+  const navigate=useNavigate();
+  const location=useLocation();
+  const from=location.state?.from?.pathname || '/';
   const handleData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value.trim() });
   };
@@ -28,6 +30,7 @@ const Login = () => {
       toast.success('Logged in successfully!',{
         position:'bottom-left',
       });
+      navigate(from,{replace :true});
     } catch (err) {
       console.log('Error from Login.jsx :', err.message);
       toast.error('Invalid login credentials!',{

@@ -101,7 +101,7 @@ const Navbar = () => {
           ><Link to="" className=' cursor-pointer'><li className='p-1  rounded-lg'><span title="search"><img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402566/search_dvvaet.gif" className='h-6 relative top-3' /></span></li></Link></motion.button>
           <motion.button 
           whileHover={{scale:1.1}}
-          ><Link to="/login" className=' cursor-pointer'><li className='p-1 '><span title="profile"><img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402601/user_npao9t.png" className='h-6 relative top-3' /></span></li></Link></motion.button>
+          ><Link to="/profile" className=' cursor-pointer'><li className='p-1 '><span title="profile"><img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402601/user_npao9t.png" className='h-6 relative top-3' /></span></li></Link></motion.button>
           <motion.button 
           whileHover={{scale:1.1}}
           className=''
@@ -116,7 +116,7 @@ const Navbar = () => {
         whileHover={{scale:1.1}}
             className="cursor-pointer"
           >
-           <Link to="/login"> <img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402601/user_npao9t.png" className="h-7" /></Link>
+           <Link to="/profile"> <img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402601/user_npao9t.png" className="h-7" /></Link>
           </motion.button>
           <motion.button
           whileHover={{scale:1.1}}
