@@ -5,15 +5,17 @@ const Navbar = () => {
   //this is for searching
   const navigate=useNavigate();
   const [searchValue,setSearchValue]=useState({search:''});
+  //this stores the value in the use state
   const handleSearch=(e)=>{
     setSearchValue({...searchValue,[e.target.name]:e.target.value.trim()});
   }
+  //this handles the search value retriving through the url
   const handleSearchSubmit=(e)=>{
     e.preventDefault();
+    //this creates the url of the searched products
     navigate(`/products?search=${searchValue.search}`);
-    // setSearchValue({ search: '' });
+    setSearchValue({ search: '' });
     setShowSearch(false);
-
   }
   // console.log(searchValue);
   // this is for mobile menu

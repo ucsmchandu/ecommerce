@@ -47,7 +47,7 @@ const Login = () => {
   return (
     <div className="w-full mt-20 flex justify-center items-center py-12 px-4 bg-gray-100">
       <div className="w-96 max-w-3xl border border-gray-300 shadow-lg rounded-xl p-10 bg-white">
-        <div className="text-center mb-6">
+        <div className=" mb-6">
           <h2 className="text-3xl font-bold">Sign in</h2>
           <p className="text-gray-600">
             or{' '}

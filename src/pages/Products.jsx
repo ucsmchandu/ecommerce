@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import ProductsListings from '../components/Products-listings'
-
+//this searchs the new url using the location
 const useQuery=()=>{
   return new URLSearchParams(useLocation().search);
 }
