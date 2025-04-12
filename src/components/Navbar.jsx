@@ -172,7 +172,7 @@ const Navbar = () => {
           {
             elements.map((data) => (
               <li key={data.id} className="p-1 bg-[#3A6EAA] hover:bg-[#87CEEB] rounded">
-                <Link to={data.link} onClick={() => isOpen(false)} className="block text-lg p-1">
+                <Link to={data.link} onClick={() => setIsOpen(false)} className="block text-lg p-1">
                   {data.name}
                 </Link>
               </li>
