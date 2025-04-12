@@ -17,7 +17,7 @@ import ProductDetails from './pages/Product-details'
 import Wishlist from './pages/Wishlist'
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Profile from './pages/profile'
+import Profile from './pages/Profile'
 
 const App = () => {
   //this set of code is for cart
