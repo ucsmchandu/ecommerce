@@ -1,7 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 const Navbar = () => {
+  //this is for searching
+  const navigate=useNavigate();
+  const [searchValue,setSearchValue]=useState({search:''});
+  const handleSearch=(e)=>{
+    setSearchValue({...searchValue,[e.target.name]:e.target.value.trim()});
+  }
+  const handleSearchSubmit=(e)=>{
+    e.preventDefault();
+    navigate(`/products?search=${searchValue.search}`);
+    // setSearchValue({ search: '' });
+    setShowSearch(false);
+
+  }
+  // console.log(searchValue);
   // this is for mobile menu
   const [isOpen, setIsOpen] = useState(false);
   //this is navbar scroll
@@ -191,21 +205,27 @@ const Navbar = () => {
                   <img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402549/close_c9mlvz.png" className="h-4" />
                 </button>
               </div>
-              <div className="flex justify-center items-center h-full">
+              {/*this is the search functionality  */}
+              <form onSubmit={handleSearchSubmit}  className="flex justify-center items-center h-full">
                 <input
                   type="text"
                   id="search"
                   name="search"
+                  value={searchValue.search}
+                  onChange={handleSearch}
                   className="outline-none p-2 w-80 rounded-md bg-white placeholder:text-lg"
                   placeholder="search item"
                 />
                 <label htmlFor="search" className=" cursor-pointer">
-                  <img
+                 <button type="submit">
+                 <img
                     src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743402582/search2_snqfp8.png"
                     className="h-8 rounded-lg bg-gray-400  m-1 p-1 "
                   />
+                 </button>
                 </label>
-              </div>
+              </form>
+
             </div>
             {showSearch && (
               <motion.div
