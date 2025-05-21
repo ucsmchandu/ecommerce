@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link,useNavigate } from "react-router-dom";
 const Navbar = () => {
@@ -87,7 +87,7 @@ const Navbar = () => {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="flex justify-between font-mono items-center p-4 text-lg text-black bg-[#FBFBFB] shadow-md fixed top-0 left-0 w-full z-50"
       >
-        <div className=" ">Logo</div>
+        <div className=" "><Link to="/">Logo</Link></div>
         {/* this is computer */}
         <div className="hidden md:flex relative top-1 space-x-4 ">
           <ul className="space-x-6 flex">

@@ -26,11 +26,13 @@ const Profile = () => {
     }
     const current=currentUser;
   return (
-    <div className='mt-30'>
-    <h1>Welcome,{userData ?.userName}</h1>
-    <p>Email:{userData ?.email}</p>
-    <button onClick={handleLogout}>logout</button>
+    <div className='grid justify-items-center mt-50'>
+        <div className=' rounded-lg bg-blue-400 text-white w-md flex flex-col space-y-10 p-2 items-center'>
+    <h1 className='text-lg'>Welcome,<span className='font-mono'> {userData ?.userName}</span></h1>
+    <p className=''>Email: <span className='text-lg font-light'>{userData ?.email}</span></p>
+    <button onClick={handleLogout} className=' p-1 rounded-lg text-md bg-red-500 text-white hover:bg-red-600 cursor-pointer'>logout</button>
 </div>
+    </div>
   )
 }
 
