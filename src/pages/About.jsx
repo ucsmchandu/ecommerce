@@ -16,7 +16,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col mt-15 space-y-5 p-2">
+      <div className="flex flex-col md:ml-50 md:w-6xl mt-15 space-y-5 p-2">
         <h1 className="text-3xl font-bold">
           A Taste of Tradition in Every Jar
         </h1>
@@ -29,7 +29,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className="flex flex-col mt-4 space-y-5 p-2">
+      <div className="flex flex-col md:ml-50 md:w-6xl mt-4 space-y-5 p-2">
         <h1 className="text-3xl font-bold">Our Story</h1>
         <p className="text-sm font-extralight">
           Rooted in love and tradition, our story traces back to the comforting
@@ -40,7 +40,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className="flex flex-col mt-4 space-y-5 p-2">
+      <div className="flex flex-col md:ml-50 md:w-6xl mt-4 space-y-5 p-2">
         <h1 className="text-3xl font-bold">Our Mission</h1>
         <p className="text-sm font-extralight">
           To celebrate and preserve India’s rich culinary heritage by offering
@@ -50,7 +50,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className="flex flex-col mt-4 space-y-5 p-2">
+      <div className="flex flex-col md:ml-50 md:w-6xl mt-4 space-y-5 p-2">
         <h1 className="text-3xl font-bold">What Makes Us Different</h1>
         <ul className="ml-10 space-y-3 list-disc">
           <li className="text-sm font-extralight">
@@ -76,7 +76,7 @@ const About = () => {
         </ul>
       </div>
 
-      <div className="flex flex-col mt-4 space-y-5 p-2">
+      <div className="flex flex-col md:ml-50 md:w-6xl mt-4 space-y-5 p-2">
         <h1 className="text-3xl font-bold">Explore Our Pickles</h1>
         <p className="text-sm font-extralight">
           From the classic tang of Mango Pickle to the fiery depth of Andhra
@@ -86,7 +86,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className="flex flex-col mt-4 space-y-5 p-2">
+      <div className="flex flex-col md:ml-50 md:w-6xl mt-4 space-y-5 p-2">
         <h1 className="text-3xl font-bold">Be Part of Our Story</h1>
         <p className="text-sm font-extralight">
           Join a growing family of pickle lovers who share a passion for flavor
