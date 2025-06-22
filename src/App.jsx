@@ -17,7 +17,7 @@ import ProductDetails from './pages/Product-details'
 import Wishlist from './pages/Wishlist'
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Profile from './pages/profile'
+import Profile from './pages/Profile'
 import FAQ from './pages/FAQ'
 import TermsConditions from './pages/TermsConditions'
 import PrivacyPolicy from './pages/PrivacyPolicy'
