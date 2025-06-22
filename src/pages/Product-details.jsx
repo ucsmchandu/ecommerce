@@ -83,8 +83,7 @@ if (!product) {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold">Weight</h3>
-            {/* <div className="flex space-x-4">
+l            {/* <div className="flex space-x-4">
               {/* buttons */}
               {/* these weights are also to be changed using json data base 
               <button className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer">
