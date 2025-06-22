@@ -87,7 +87,7 @@ const Navbar = () => {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="flex justify-between font-mono items-center p-4 text-lg text-black bg-[#FBFBFB] shadow-md fixed top-0 left-0 w-full z-50"
       >
-        <div className=" "><Link to="/">Logo</Link></div>
+        <div className=" "><Link to="/"><img src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1750518461/logo_n0avk3.png" className="h-10"/></Link></div>
         {/* this is computer */}
         <div className="hidden md:flex relative top-1 space-x-4 ">
           <ul className="space-x-6 flex">

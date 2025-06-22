@@ -23,10 +23,11 @@ const AuthContextProvider = ({children}) => {
             }
             setLoading(false);
         });
+        return ()=>unsubscribe();
     },[]);
   return (
     <div>
-        <AuthContext.Provider value={{currentUser,userData}}>
+        <AuthContext.Provider value={{currentUser,userData,loading}}>
             {!loading && children}
         </AuthContext.Provider>
     </div>

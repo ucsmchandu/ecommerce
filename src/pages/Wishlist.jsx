@@ -61,9 +61,9 @@ const Wishlist = () => {
                 className="bg-white rounded-2xl shadow hover:shadow-lg transition-all duration-300 p-4 flex flex-col items-center"
               >
                 <img
-                  src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743401208/cld-sample-5.jpg"
+                  src={item.img}
                   alt={item.name}
-                  className="w-40 h-40 object-cover rounded-xl"
+                  className="w-56 h-40 object-cover rounded-xl"
                 />
                 <h2 className="text-xl font-semibold mt-4 text-gray-800">
                   {item.name}

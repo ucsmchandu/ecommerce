@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import { useState,useEffect } from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import CartContext from './components/Cart-context'
 import WishlistContext from './components/Wishlist-context'
@@ -17,7 +17,10 @@ import ProductDetails from './pages/Product-details'
 import Wishlist from './pages/Wishlist'
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Profile from './pages/Profile'
+import Profile from './pages/profile'
+import FAQ from './pages/FAQ'
+import TermsConditions from './pages/TermsConditions'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 const App = () => {
   //this set of code is for cart
@@ -63,6 +66,9 @@ const App = () => {
         <Route path="about" element={<About/>}/>
         <Route path="shop" element={<Products/>}/>
         <Route path="cart" element={<Cart/>} />
+        <Route path="faq" element={<FAQ/>} />
+        <Route path="terms" element={<TermsConditions/>} />
+        <Route path="pp" element={<PrivacyPolicy/>} />
         <Route path="orders" element={
           <ProtectedRoute>
             <Orders/>
@@ -86,7 +92,7 @@ const App = () => {
         </Route>
       </Routes>
       {/* this is for pop up messages */}
-      <ToastContainer/>
+      <ToastContainer position='top-center'/>
     </Router>
      </WishlistContext.Provider>
     </CartContext.Provider>

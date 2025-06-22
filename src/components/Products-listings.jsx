@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import products from '../Products-data.json'
 import ProductCard from './Product-card'
 const ProductsListings = ({searchTerm}) => {

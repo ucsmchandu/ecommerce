@@ -4,69 +4,319 @@
     "name": "Wireless Mouse",
     "rating": 4.5,
     "price": 15.99,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750519607/Magic_Mouse_re79l5.jpg"
   },
   {
     "id": 2,
     "name": "Mechanical Keyboard",
     "rating": 4.7,
     "price": 49.99,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750519695/Keychron-Q1-custom-mechanical-keyboard-green-version-red_3b2b5520-b8f2-42b4-a769-629cc2fb3084_ey5zsv.jpg"
   },
   {
     "id": 3,
     "name": "Gaming Headset",
     "rating": 4.3,
     "price": 35.50,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750519751/pdp-gallery-a10-gray-01-new_mtsxns.png"
   },
   {
     "id": 4,
     "name": "Smartphone Stand",
     "rating": 4.6,
     "price": 10.99,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750519808/A-3_ratfz6.jpg"
   },
   {
     "id": 5,
     "name": "USB-C Charger",
     "rating": 4.8,
     "price": 18.75,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750519880/s-l1200_whzuer.jpg"
   },
   {
     "id": 6,
     "name": "Portable SSD",
     "rating": 4.9,
     "price": 89.99,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750519992/711-n_US0bL_wwlrfj.jpg"
   },
   {
     "id": 7,
     "name": "Laptop Cooling Pad",
     "rating": 4.2,
     "price": 22.99,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750520076/Coolcold-15-6-17-3inch-Laptop-Cooling-Pad-with-6-Quiet-Fans-7-Height-Wind-Speed-Adjustable-2-USB-Port-Laptop-Cooer-With-Mobile-Phone-Holde_75858a8e-9f4e-4961-91ff-5638442ca1e0.b4ae31c47042a35d3a68b2ba22ec9b67_meqdjt.jpg"
   },
   {
     "id": 8,
     "name": "Bluetooth Speaker",
     "rating": 4.4,
     "price": 29.99,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750520146/MWQW3_AV1_gaxgbc.jpg"
   },
   {
     "id": 9,
     "name": "Wireless Earbuds",
     "rating": 4.6,
     "price": 39.50,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750520234/1715610599-apple-airpods-pro-gen-2-664223cd1ee89.jpg_ctlrqw.jpg"
   },
   {
     "id": 10,
     "name": "LED Desk Lamp",
     "rating": 4.5,
     "price": 25.00,
-    "quantity": 1
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750520284/CSR3008C-SHPR_vgrgko.jpg"
+  },
+   {
+    "id": 11,
+    "name": "Ergonomic Office Chair",
+    "rating": 4.7,
+    "price": 129.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750521766/mark-adler-ergonomic-office-chair-model-expert-79-grey_jncder.jpg"
+  },
+  {
+    "id": 12,
+    "name": "HD Webcam",
+    "rating": 4.4,
+    "price": 45.00,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750521837/c270-hd-webcam-1-0224_zqhqoe.png"
+  },
+  {
+    "id": 13,
+    "name": "Graphics Tablet",
+    "rating": 4.6,
+    "price": 59.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750521883/61_k20KQW4L_jaglko.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Noise Cancelling Headphones",
+    "rating": 4.8,
+    "price": 99.95,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750521937/51O3nglyJQL_wouwhi.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Laptop Stand",
+    "rating": 4.5,
+    "price": 27.50,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750521998/618YQXDbaRL_upxdmq.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Smart Plug",
+    "rating": 4.3,
+    "price": 19.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522037/61SX9XPX4CL_kbvben.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Wireless Charging Pad",
+    "rating": 4.4,
+    "price": 21.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522084/3b77c73c59348adb_WIA007ttBK_NPI_GTM_15W_EasyAlignmentWirelessChargingPad.4_n9izw6.jpg"
+  },
+  {
+    "id": 18,
+    "name": "4K HDMI Cable",
+    "rating": 4.6,
+    "price": 9.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522129/p569006-front-l_ogvo1z.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Adjustable Monitor Arm",
+    "rating": 4.7,
+    "price": 54.90,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522189/armpivote2.main_covgyz.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Multi-Port USB Hub",
+    "rating": 4.5,
+    "price": 17.75,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522235/74954ad6704d0c6f_AVC008xxSGY-v2-6-in-1-multiport-hub-gallery-shot-01_dt7ksw.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Smartwatch",
+    "rating": 4.6,
+    "price": 79.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522364/black_grande_jeujvg.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Tablet Stand",
+    "rating": 4.5,
+    "price": 14.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522439/1-2_1d96739c-abff-44ef-ad3f-4979d4dd5d51_sihvjx.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Foldable Laptop Table",
+    "rating": 4.4,
+    "price": 32.50,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522505/61w0gV--eXL._UF894_1000_QL80__jfkzyo.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Wi-Fi Range Extender",
+    "rating": 4.2,
+    "price": 24.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522610/WN3000RP_productcarousel_hero_image_tcm148-113152_bcn3rm.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Action Camera",
+    "rating": 4.7,
+    "price": 89.00,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522655/Which_20action_20camera_20to_20buy_yw5rjq.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Streaming Microphone",
+    "rating": 4.6,
+    "price": 55.00,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522686/lukyamzn-microphones-ph00727b004-64_600_ilv8g7.jpg"
+  },
+  {
+    "id": 27,
+    "name": "VR Headset",
+    "rating": 4.5,
+    "price": 129.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522719/oculus-go-1-e1516017131531_f82kbn.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Cable Organizer Box",
+    "rating": 4.3,
+    "price": 13.75,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522773/gen-workflow_2Fproduct-database_2Fyesesion-cord-management-box_tbzavz.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Bluetooth Tracker",
+    "rating": 4.4,
+    "price": 19.50,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522817/3_5_2_vp6hi7.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Smart Light Bulb",
+    "rating": 4.5,
+    "price": 11.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522892/Sunco_G25_SmartBulb_Block_02_Dimensions_fui6wi.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Drawing Stylus Pen",
+    "rating": 4.6,
+    "price": 29.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522934/S6a6c3b07d7d24b27a6b6bef182122f1d2_rzlr3u.webp"
+  },
+  {
+    "id": 32,
+    "name": "Fingerprint Padlock",
+    "rating": 4.3,
+    "price": 33.90,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750522962/71a34cm55SL_lwdndp.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Electric Screwdriver Kit",
+    "rating": 4.4,
+    "price": 39.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750523006/21accf92-31db-4fb8-90f0-de252e931949_1.7f09a7c8a20cacb4f060f0ce87f0bf01_utmvo1.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Wireless Presenter Remote",
+    "rating": 4.5,
+    "price": 17.25,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750523037/51beDuysk0L_xd2jsz.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Digital Alarm Clock",
+    "rating": 4.2,
+    "price": 22.49,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750523071/7b6eff7c-dc08-45e9-977a-0fdd061de4a1_2x_czj2t9.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Smart Thermometer",
+    "rating": 4.4,
+    "price": 25.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750523103/604ba5b210ebfb3a9cd151f9_SE_KinsaApp_to3c9u.png"
+  },
+  {
+    "id": 37,
+    "name": "Mini Projector",
+    "rating": 4.3,
+    "price": 74.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750523129/618klqnYCGL_vvujzo.jpg"
+  },
+  {
+    "id": 38,
+    "name": "Phone Camera Lens Kit",
+    "rating": 4.2,
+    "price": 16.75,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750523208/71ynwzfq7SL_ob4ot8.jpg"
+  },
+  {
+    "id": 39,
+    "name": "Cable Management Clips",
+    "rating": 4.5,
+    "price": 7.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750523241/61XSQ6WxQKL._UF1000_1000_QL80__uqskc4.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Rechargeable Desk Fan",
+    "rating": 4.6,
+    "price": 19.99,
+    "quantity": 1,
+    "img":"https://res.cloudinary.com/dllvcgpsk/image/upload/v1750523288/1_9b6014e4-6176-48f1-bae3-b1f687b6fb44_2048x2048_cd7a6l.jpg"
   }
 ]

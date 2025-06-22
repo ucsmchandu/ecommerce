@@ -55,7 +55,7 @@ const Cart = () => {
                   {/* Product Image */}
                   <div className="flex justify-center">
                     <img
-                      src={item.image || 'https://res.cloudinary.com/dllvcgpsk/image/upload/v1743401208/cld-sample-5.jpg'}
+                      src={item.img }
                       alt={item.name || 'Product'}
                       className="h-44 rounded-2xl p-2"
                     />

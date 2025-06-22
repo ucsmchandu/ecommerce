@@ -65,7 +65,7 @@ if (!product) {
         <div className="w-full flex justify-center">
           <img
           // here we have to use the data base data
-            src="https://res.cloudinary.com/dllvcgpsk/image/upload/v1743401208/cld-sample-5.jpg"
+            src={product.img}
             className="max-w-full rounded-lg shadow-md"
           />
         </div>
@@ -84,9 +84,9 @@ if (!product) {
 
           <div className="space-y-2">
             <h3 className="text-lg font-semibold">Weight</h3>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               {/* buttons */}
-              {/* these weights are also to be changed using json data base */}
+              {/* these weights are also to be changed using json data base 
               <button className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer">
                 200
               </button>
@@ -96,7 +96,7 @@ if (!product) {
               <button className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer">
                 1000
               </button>
-            </div>
+            </div> */}
           </div>
           <div>
             {/* add to cart button */}
