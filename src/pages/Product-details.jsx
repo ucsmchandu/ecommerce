@@ -82,8 +82,8 @@ if (!product) {
             </p>
           </div>
 
-          <div className="space-y-2">
-l            {/* <div className="flex space-x-4">
+          {/*<div className="space-y-2">
+l             <div className="flex space-x-4">
               {/* buttons */}
               {/* these weights are also to be changed using json data base 
               <button className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer">
@@ -95,8 +95,8 @@ l            {/* <div className="flex space-x-4">
               <button className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer">
                 1000
               </button>
-            </div> */}
-          </div>
+            </div> 
+          </div>*/}
           <div>
             {/* add to cart button */}
             <button
