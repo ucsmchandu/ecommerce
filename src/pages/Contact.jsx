@@ -10,7 +10,7 @@ const Contact = () => {
             "Every connection starts a new story—let’s write yours together."
           </p>
           <p className="text-gray-600 mt-1">
-            Handpicked treasures, just for you because you deserve the best.
+            Carefully curated picks, just for you — because you deserve nothing less than the best.
           </p>
         </div>
       </div>

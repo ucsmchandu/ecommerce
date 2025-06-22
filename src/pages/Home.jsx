@@ -10,10 +10,10 @@ const Home = () => {
         <div className="text-center bg-[#4CC9FE] py-10 shadow-md">
           <h1 className="text-4xl font-bold text-[#FFFECB]">Home</h1>
           <p className="text-white mt-2 italic">
-           "Crafted from the past, served with pride — welcome to a taste that feels like home."
+           "Inspired by the past, delivered with care — bringing comfort and quality to your everyday life."
           </p>
           <p className="text-white mt-1">
-            More than just a space—it’s a feeling we craft with care.
+            More than just a purchase — it’s an experience we craft with care.
           </p>
         </div>
       </div>

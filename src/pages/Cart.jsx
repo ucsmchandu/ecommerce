@@ -22,7 +22,7 @@ const Cart = () => {
       <div className="text-center bg-white py-10 shadow-md">
         <h1 className="text-4xl font-bold text-gray-700">Your Cart</h1>
         <p className="text-gray-500 mt-2 italic">
-          "Your cart is full of flavor and possibilities."
+          "Your cart is filled with choices and endless possibilities."
         </p>
         <p className="text-gray-600 mt-1">
           Double-check your items before heading to checkout!

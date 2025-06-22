@@ -11,7 +11,7 @@ const Orders = () => {
             "Every purchase is a step in your journey—make it unforgettable."
           </p>
           <p className="text-gray-600 mt-1">
-            Discover handpicked favorites curated with you in mind.
+            Discover carefully curated selections, chosen with you in mind.
           </p>
         </div>
       </div>

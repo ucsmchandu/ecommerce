@@ -7,11 +7,10 @@ const About = () => {
         <div className="text-center bg-white py-10 shadow-md">
           <h1 className="text-4xl font-bold text-gray-700">About Us</h1>
           <p className="text-gray-500 mt-2 italic">
-            "Rooted in tradition, crafted with care—our story is just the
-            beginning of something flavorful."
+            "Built on trust and designed for everyone — our journey begins with delivering quality and convenience to your doorstep."
           </p>
           <p className="text-gray-600 mt-1">
-            Thoughtfully chosen, beautifully made—because you’re worth it.
+            Carefully selected, crafted with quality — because you deserve the best in every purchase.
           </p>
         </div>
       </div>
